@@ -20,12 +20,14 @@ jobs:
       packages: write
     strategy:
       matrix:
-        profile: ["hsb", "dsb"]
+        profile: ["hsb", "dsb", "multilang"]
         include:
           - profile: hsb
             model: "Korla/whisper-large-v3-turbo-hsb-0"
           - profile: dsb
             model: "Korla/whisper-large-v3-turbo-dsb"
+          - profile: multilang
+            model: "openai/whisper_large_v3_turbo"
     env:
       DOCKER_IMAGE_NAME: ${{ github.repository }}
       PUSH: ${{ toJSON(github.event_name != 'pull_request') }}
