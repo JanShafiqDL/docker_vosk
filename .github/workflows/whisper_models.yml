@@ -27,7 +27,7 @@ jobs:
           - profile: dsb
             model: "Korla/whisper-large-v3-turbo-dsb"
           - profile: multilang
-            model: "openai/whisper_large_v3_turbo"
+            model: "openai/whisper-large-v3-turbo"
     env:
       DOCKER_IMAGE_NAME: ${{ github.repository }}
       PUSH: ${{ toJSON(github.event_name != 'pull_request') }}
