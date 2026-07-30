@@ -20,10 +20,12 @@ jobs:
       packages: write
     strategy:
       matrix:
-        profile: ["hsb", "dsb"]
+        profile: ["hsb", "dsb", "hsb-v1"]
         include:
           - profile: hsb
             model: "Korla/whisper-large-v3-turbo-hsb-0"
+          - profile: hsb-v1
+            model: "Korla/whisper_large_v3_turbo_hsb-v1"
           - profile: dsb
             model: "Korla/whisper-large-v3-turbo-dsb"
     env:
